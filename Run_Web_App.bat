@@ -1,6 +1,0 @@
-@echo off
-echo Installing dependencies...
-pip install -r requirements.txt
-echo Starting Bizcivitas Contact Cleaner Web App...
-python app.py
-pause

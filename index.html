@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizcivitas Contact Cleaner</title>
+    <!-- Use relative paths for static files -->
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- SheetJS for Excel processing in browser -->
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <!-- Use relative path for logo -->
+                <img src="Logo/logo.svg" alt="Bizcivitas Logo" class="logo">
+            </div>
+            <h1>Contact Cleaner</h1>
+            <p>Clean and organize your contacts for Bizcivitas efficiently.</p>
+        </header>
+
+        <main>
+            <form id="cleaner-form">
+                <div class="glass-card">
+                    <div class="input-group">
+                        <label for="member_name">Member Name / File Owner</label>
+                        <input type="text" id="member_name" name="member_name" placeholder="Enter owner name..." required>
+                    </div>
+
+                    <div class="file-upload-area" id="drop-zone">
+                        <div class="upload-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16V8M12 8L9 11M12 8L15 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 15V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p id="file-label">Click or Drag & Drop Excel/CSV file here</p>
+                        <input type="file" id="file-input" name="file" accept=".csv, .xlsx, .xls" hidden>
+                        <button type="button" class="btn-secondary" onclick="document.getElementById('file-input').click()">Select File</button>
+                    </div>
+
+                    <div id="file-status" class="file-status hidden">
+                        <span id="selected-filename"></span>
+                        <button type="button" id="remove-file" class="btn-icon">&times;</button>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submit-btn" disabled>
+                        <span>Start Cleaning</span>
+                    </button>
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Bizcivitas. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loader-content">
+            <div class="main-loader"></div>
+            <h3>Cleaning your contacts...</h3>
+            <p>Applying filters and formatting phone numbers.</p>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
