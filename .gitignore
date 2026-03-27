@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Local data
+uploads/
+*.xlsx
+*.xls
+*.csv
+!Logo/*.svg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
